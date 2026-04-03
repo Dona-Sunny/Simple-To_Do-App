@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple To-Do</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="app-card" aria-labelledby="app-title">
+      <div class="hero">
+        <p class="eyebrow">Proof of Concept</p>
+        <h1 id="app-title">Simple To-Do</h1>
+        <p class="subtitle">A focused task list that works locally in your browser and keeps pace with quick everyday planning.</p>
+      </div>
+
+      <form class="task-form" id="task-form" novalidate>
+        <div class="field-group">
+          <label for="task-input">Task</label>
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            maxlength="120"
+            placeholder="Add a task you want to finish"
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="field-group">
+          <label for="priority-select">Priority</label>
+          <select id="priority-select" name="priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+
+        <button class="primary-button" type="submit">Add Task</button>
+        <p class="validation-message" id="validation-message" role="alert" aria-live="polite"></p>
+      </form>
+
+      <section class="status-bar" aria-label="Task summary">
+        <p class="task-count"><span id="active-count">0</span> active tasks</p>
+        <p class="storage-note">Saved automatically on this machine</p>
+      </section>
+
+      <section class="task-panel" aria-live="polite">
+        <p class="empty-state" id="empty-state">No tasks yet. Add one above to get started.</p>
+        <ul class="task-list" id="task-list"></ul>
+      </section>
+    </section>
+  </main>
+
+  <template id="task-item-template">
+    <li class="task-item">
+      <label class="task-main">
+        <input class="task-toggle" type="checkbox">
+        <span class="task-copy">
+          <span class="task-text"></span>
+          <span class="priority-badge"></span>
+        </span>
+      </label>
+      <button class="delete-button" type="button" aria-label="Delete task">Delete</button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
