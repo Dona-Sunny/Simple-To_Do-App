@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "vitest run --pool threads"
+  },
+  "devDependencies": {
+    "jsdom": "^29.0.1",
+    "vitest": "^4.1.2"
+  }
+}
